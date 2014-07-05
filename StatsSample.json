@@ -1,0 +1,454 @@
+{
+"server": {
+    "memory": {
+        "AverageHeapAllocationRate":
+            {"Category":"server","Container":"memory","ShortName":"AverageHeapAllocationRate","Name":"AverageHeapAllocationRate","Description":"AverageHeapAllocationRate","UnitName":"MB/sec","Value":0.223,"StatType":"Stat"},
+        "HeapMemory":
+            {"Category":"server","Container":"memory","ShortName":"HeapMemory","Name":"HeapMemory","Description":"HeapMemory","UnitName":"MB","Value":222.264,"StatType":"Stat"},
+        "LastHeapAllocationRate":
+            {"Category":"server","Container":"memory","ShortName":"LastHeapAllocationRate","Name":"LastHeapAllocationRate","Description":"LastHeapAllocationRate","UnitName":"MB/sec","Value":0.749,"StatType":"Stat"},
+        "ProcessMemory":
+            {"Category":"server","Container":"memory","ShortName":"ProcessMemory","Name":"ProcessMemory","Description":"ProcessMemory","UnitName":"MB","Value":564.027,"StatType":"Stat"}
+    },
+    "network": {
+        "BytesRcvd/Local Area Connection 2":
+            {"Category":"server","Container":"network","ShortName":"BytesRcvd/Local Area Connection 2","Name":"BytesRcvd/Local Area Connection 2","Description":"Local Area Connection 2","UnitName":"KB","Value":1577620.656,"StatType":"Stat"},
+        "BytesSent/Local Area Connection 2":
+            {"Category":"server","Container":"network","ShortName":"BytesSent/Local Area Connection 2","Name":"BytesSent/Local Area Connection 2","Description":"Local Area Connection 2","UnitName":"KB","Value":66348.231,"StatType":"Stat"},
+        "HTTPRequestsMade":
+            {"Category":"server","Container":"network","ShortName":"HTTPRequestsMade","Name":"HTTPRequestsMade","Description":"Number of outbound HTTP requests made","UnitName":"requests","Value":7.0,"StatType":"Stat"},
+        "TotalBytes/Local Area Connection 2":
+            {"Category":"server","Container":"network","ShortName":"TotalBytes/Local Area Connection 2","Name":"TotalBytes/Local Area Connection 2","Description":"Local Area Connection 2","UnitName":"KB","Value":1643968.888,"StatType":"Stat"}
+    },
+    "processor": {
+        "CPUPercent":
+            {"Category":"server","Container":"processor","ShortName":"CPUPercent","Name":"CPUPercent","Description":"","UnitName":"percent","Value":0.45281109213829,"StatType":"Stat"},
+        "PrivilegedProcessorTime":
+            {"Category":"server","Container":"processor","ShortName":"PrivilegedProcessorTime","Name":"PrivilegedProcessorTime","Description":"PrivilegedProcessorTime","UnitName":"sec","Value":1.6536106,"StatType":"Stat"},
+        "Threads":
+            {"Category":"server","Container":"processor","ShortName":"Threads","Name":"Threads","Description":"Threads","UnitName":"threads","Value":68.0,"StatType":"Stat"},
+        "TotalProcessorTime":
+            {"Category":"server","Container":"processor","ShortName":"TotalProcessorTime","Name":"TotalProcessorTime","Description":"TotalProcessorTime","UnitName":"sec","Value":10.0776646,"StatType":"Stat"},
+        "UserProcessorTime":
+            {"Category":"server","Container":"processor","ShortName":"UserProcessorTime","Name":"UserProcessorTime","Description":"UserProcessorTime","UnitName":"sec","Value":8.424054,"StatType":"Stat"}
+    },
+    "threadpool": {
+        "BuiltinThreadpoolIOCPThreadsAvailable":
+            {"Category":"server","Container":"threadpool","ShortName":"BuiltinThreadpoolIOCPThreadsAvailable","Name":"BuiltinThreadpoolIOCPThreadsAvailable","Description":"BuiltinThreadpoolIOCPThreadsAvailable","UnitName":"threads","Value":999.0,"StatType":"Stat"},
+        "BuiltinThreadpoolWorkerThreadsAvailable":
+            {"Category":"server","Container":"threadpool","ShortName":"BuiltinThreadpoolWorkerThreadsAvailable","Name":"BuiltinThreadpoolWorkerThreadsAvailable","Description":"BuiltinThreadpoolWorkerThreadsAvailable","UnitName":"threads","Value":1000.0,"StatType":"Stat"}
+    }
+}
+}
+==========================================================
+full fetch of <all,all,all>
+
+{
+"clientstack": {
+    "rpsa00": {
+        "IncomingPacketPoolCount": 
+            {"Category":"clientstack","Container":"rpsa00","ShortName":"IncomingPacketPoolCount","Name":"Objects within incoming packet pool","Description":"The number of objects currently stored within the incoming packet pool","UnitName":"","Value":0.0,"StatType":"Stat" },
+        "IncomingPacketsProcessedCount":
+            {"Category":"clientstack","Container":"rpsa00","ShortName":"IncomingPacketsProcessedCount","Name":"Number of inbound UDP packets processed","Description":"Number of inbound UDP packets processed","UnitName":"","Value":0.0,"StatType":"Stat"},"PacketDataBlocksPoolCount":
+            {"Category":"clientstack","Container":"rpsa00","ShortName":"PacketDataBlocksPoolCount","Name":"Objects within the packet data block pool","Description":"The number of objects currently stored within the packet data block pool","UnitName":"","Value":0.0,"StatType":"Stat"},"PacketDataBlocksReused":
+            {"Category":"clientstack","Container":"rpsa00","ShortName":"PacketDataBlocksReused","Name":"Packet data blocks reused","Description":"Number of data blocks reused out of all requests to the packet pool","UnitName":"%","Value":0.0,"StatType":"Stat"},"PacketsPoolCount":
+            {"Category":"clientstack","Container":"rpsa00","ShortName":"PacketsPoolCount","Name":"Objects within the packet pool","Description":"The number of objects currently stored within the packet pool","UnitName":"","Value":0.0,"StatType":"Stat"},"PacketsReused":
+            {"Category":"clientstack","Container":"rpsa00","ShortName":"PacketsReused","Name":"Packets reused","Description":"Number of packets reused out of all requests to the packet pool","UnitName":"%","Value":0.0,"StatType":"Stat"},"UDPPacketBufferPoolCount":
+            {"Category":"clientstack","Container":"rpsa00","ShortName":"UDPPacketBufferPoolCount","Name":"Objects within the UDPPacketBuffer pool","Description":"The number of objects currently stored within the UDPPacketBuffer pool","UnitName":"","Value":0.0,"StatType":"Stat"}
+    }
+},
+"dsg": {
+    "dsg": {
+        "dsg": {
+            "rpsa00.SyncConnector0": {
+                "rpsa00.SyncConnector0": {
+                    "ConnectorNum":0,
+                    "RegionName": "rpsa00",
+                    "MyActorID": "persist",
+                    "OtherSideActor":"physics",
+                    "OtherSideRegion":"rpea00",
+                    "MessagesByType": {
+                        "GetObjects": {},
+                        "GetObjects_Rcvd":1.0,
+                        "GetPresences": {},
+                        GetPresences_Rcvd":1.0,
+                        "GetRegionInfo": {},
+                        "GetRegionInfo_Rcvd":1.0,
+                        "GetTerrain": {},
+                        "GetTerrain_Rcvd":1.0,
+                        "KeepAlive": {},
+                        "KeepAlive_Rcvd":163.0,
+                        "KeepAlive_Sent":163.0,
+                        "RegionInfo": {},
+                        "RegionInfo_Sent":1.0,
+                        "Terrain": {},
+                        "Terrain_Sent":1.0
+                    },
+                    "Histograms": {},
+                    "Bytes_Rcvd":0.0,
+                    "Bytes_Sent":350995.0,
+                    "Msgs_Rcvd":167.0,
+                    "Msgs_Sent":165.0,
+                    "GetObjects_Rcvd":1.0,
+                    "GetPresences_Rcvd":1.0,
+                    "GetRegionInfo_Rcvd":1.0,
+                    "GetTerrain_Rcvd":1.0,
+                    "KeepAlive_Rcvd":163.0,
+                    "KeepAlive_Sent":163.0,
+                    "RegionInfo_Sent":1.0,
+                    "Terrain_Sent":1.0,
+                    "Queued_Msgs":0.0
+                }
+            },
+            "rpsa00.SyncConnector1":
+            {"rpsa00.SyncConnector1":
+            {"ConnectorNum":1,"RegionName":"rpsa00","MyActorID":"persist","OtherSideActor":"script","OtherSideRegion":"rsea100","MessagesByType":
+            {"GetObjects":
+            {},"GetObjects_Rcvd":1.0,"GetPresences":
+            {},"GetPresences_Rcvd":1.0,"GetRegionInfo":
+            {},"GetRegionInfo_Rcvd":1.0,"GetTerrain":
+            {},"GetTerrain_Rcvd":1.0,"KeepAlive":
+            {},"KeepAlive_Rcvd":163.0,"KeepAlive_Sent":163.0,"RegionInfo":
+            {},"RegionInfo_Sent":1.0,"Terrain":
+            {},"Terrain_Sent":1.0},"Histograms":
+            {},"Bytes_Rcvd":0.0,"Bytes_Sent":350995.0,"Msgs_Rcvd":167.0,"Msgs_Sent":165.0,"GetObjects_Rcvd":1.0,"GetPresences_Rcvd":1.0,"GetRegionInfo_Rcvd":1.0,"GetTerrain_Rcvd":1.0,"KeepAlive_Rcvd":163.0,"KeepAlive_Sent":163.0,"RegionInfo_Sent":1.0,"Terrain_Sent":1.0,"Queued_Msgs":0.0}},"rpsa00.SyncConnector2":
+            {"rpsa00.SyncConnector2":
+            {"ConnectorNum":2,"RegionName":"rpsa00","MyActorID":"persist","OtherSideActor":"clientmgr1","OtherSideRegion":"rcm100","MessagesByType":
+            {"GetObjects":
+            {},"GetObjects_Rcvd":1.0,"GetPresences":
+            {},"GetPresences_Rcvd":1.0,"GetRegionInfo":
+            {},"GetRegionInfo_Rcvd":1.0,"GetTerrain":
+            {},"GetTerrain_Rcvd":1.0,"KeepAlive":
+            {},"KeepAlive_Rcvd":163.0,"KeepAlive_Sent":163.0,"RegionInfo":
+            {},"RegionInfo_Sent":1.0,"Terrain":
+            {},"Terrain_Sent":1.0},"Histograms":
+            {},"Bytes_Rcvd":0.0,"Bytes_Sent":350995.0,"Msgs_Rcvd":167.0,"Msgs_Sent":165.0,"GetObjects_Rcvd":1.0,"GetPresences_Rcvd":1.0,"GetRegionInfo_Rcvd":1.0,"GetTerrain_Rcvd":1.0,"KeepAlive_Rcvd":163.0,"KeepAlive_Sent":163.0,"RegionInfo_Sent":1.0,"Terrain_Sent":1.0,"Queued_Msgs":0.0}},"rpsa00.SyncConnector3":
+            {"rpsa00.SyncConnector3":
+            {"ConnectorNum":3,"RegionName":"rpsa00","MyActorID":"persist","OtherSideActor":"clientmgr2","OtherSideRegion":"rcm200","MessagesByType":
+            {"GetObjects":
+            {},"GetObjects_Rcvd":1.0,"GetPresences":
+            {},"GetPresences_Rcvd":1.0,"GetRegionInfo":
+            {},"GetRegionInfo_Rcvd":1.0,"GetTerrain":
+            {},"GetTerrain_Rcvd":1.0,"KeepAlive":
+            {},"KeepAlive_Rcvd":163.0,"KeepAlive_Sent":163.0,"RegionInfo":
+            {},"RegionInfo_Sent":1.0,"Terrain":
+            {},"Terrain_Sent":1.0},"Histograms":
+            {},"Bytes_Rcvd":0.0,"Bytes_Sent":350995.0,"Msgs_Rcvd":167.0,"Msgs_Sent":165.0,"GetObjects_Rcvd":1.0,"GetPresences_Rcvd":1.0,"GetRegionInfo_Rcvd":1.0,"GetTerrain_Rcvd":1.0,"KeepAlive_Rcvd":163.0,"KeepAlive_Sent":163.0,"RegionInfo_Sent":1.0,"Terrain_Sent":1.0,"Queued_Msgs":0.0}
+            }
+        }
+    }
+},
+"dsg-detail": {
+    "rpsa00.SyncConnector0": {
+        "DSG_Bytes_Rcvd|SyncConnector0(physics/rpea00)": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Bytes_Rcvd|SyncConnector0(physics/rpea00)",
+            "Name":"Bytes_Rcvd",
+            "Description":"connector DSG bytes rcvd",
+            "UnitName":" bytes",
+            "Value":0.0,
+            "StatType":"SyncConnectorStat",
+            "RegionName":"rpsa00",
+            "ConnectorNum":0,
+            "MyActorID":"persist",
+            "OtherSideActorID":"physics",
+            "OtherSideRegionName":"rpea00",
+            "MessageType":""},
+        "DSG_Bytes_Sent|SyncConnector0(physics/rpea00)": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Bytes_Sent|SyncConnector0(physics/rpea00)",
+            "Name":"Bytes_Sent",
+            "Description":"connector DSG bytes sent",
+            "UnitName":" bytes",
+            "Value":350995.0,
+            "StatType": "SyncConnectorStat",
+            "RegionName": "rpsa00",
+            "ConnectorNum":0, 
+            "MyActorID":"persist", 
+            "OtherSideActorID":"physics", 
+            "OtherSideRegionName":"rpea00", 
+            "MessageType":""},
+        "DSG_Msgs_Rcvd|SyncConnector0(physics/rpea00)": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Rcvd|SyncConnector0(physics/rpea00)",
+            "Name":"Msgs_Rcvd",
+            "Description":"connector DSG messages rcvd",
+            "UnitName":" messages",
+            "Value":167.0,
+            "StatType": "SyncConnectorStat",
+            "RegionName": "rpsa00 ",
+            "ConnectorNum":0, 
+            "MyActorID":"persist", 
+            "OtherSideActorID":"physics", 
+            "OtherSideRegionName":"rpea00", 
+            "MessageType":""},
+        "DSG_Msgs_Sent|SyncConnector0(physics/rpea00)": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Sent|SyncConnector0(physics/rpea00)",
+            "Name":"Msgs_Sent",
+            "Description":"connector DSG messages sent",
+            "UnitName":" messages",
+            "Value":165.0,
+            "StatType": "SyncConnectorStat",
+            "RegionName": "rpsa00",
+            "ConnectorNum":0, 
+            "MyActorID":"persist", 
+            "OtherSideActorID":"physics", 
+            "OtherSideRegionName":"rpea00", 
+            "MessageType":""},
+        "DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|GetObjects": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|GetObjects",
+            "Name":"GetObjects_Rcvd",
+            "Description":"connector DSG messages of type GetObjects",
+            "UnitName":" messages",
+            "Value":1.0,
+            "StatType": "SyncConnectorStat",
+            "RegionName": "rpsa00",
+            "ConnectorNum":0, 
+            "MyActorID":"persist", 
+            "OtherSideActorID":"physics", 
+            "OtherSideRegionName":"rpea00", 
+            "MessageType":"GetObjects"},
+        "DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|GetPresences": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|GetPresences",
+            "Name":"GetPresences_Rcvd",
+            "Description":"connector DSG messages of type GetPresences",
+            "UnitName":" messages",
+            "Value":1.0,
+            "StatType": "SyncConnectorStat",
+            "RegionName": "rpsa00",
+            "ConnectorNum":0, 
+            "MyActorID":"persist", 
+            "OtherSideActorID":"physics", 
+            "OtherSideRegionName":"rpea00", 
+            "MessageType":"GetPresences"},
+        "DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|GetRegionInfo": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|GetRegionInfo",
+            "Name":"GetRegionInfo_Rcvd",
+            "Description":"connector DSG messages of type GetRegionInfo",
+            "UnitName":" messages",
+            "Value":1.0,
+            "StatType":"SyncConnectorStat",
+            "RegionName":"rpsa00",
+            "ConnectorNum":0,
+            "MyActorID":"persist",
+            "OtherSideActorID":"physics",
+            "OtherSideRegionName":"rpea00",
+            "MessageType":"GetRegionInfo"},
+        "DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|GetTerrain": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|GetTerrain",
+            "Name":"GetTerrain_Rcvd",
+            "Description":"connector DSG messages of type GetTerrain",
+            "UnitName":" messages",
+            "Value":1.0,
+            "StatType":"SyncConnectorStat",
+            "RegionName":"rpsa00",
+            "ConnectorNum":0,
+            "MyActorID":"persist",
+            "OtherSideActorID":"physics",
+            "OtherSideRegionName":"rpea00",
+            "MessageType":"GetTerrain"},
+        "DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|KeepAlive": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector0(physics/rpea00)|KeepAlive",
+            "Name":"KeepAlive_Rcvd",
+            "Description":"connector DSG messages of type KeepAlive",
+            "UnitName":" messages",
+            "Value":163.0,
+            "StatType":"SyncConnectorStat",
+            "RegionName":"rpsa00",
+            "ConnectorNum":0,
+            "MyActorID": "persist",
+            "OtherSideActorID":"physics",
+            "OtherSideRegionName":"rpea00",
+            "MessageType":"KeepAlive"},
+        "DSG_Msgs_Typ_Sent|SyncConnector0(physics/rpea00)|KeepAlive": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Typ_Sent|SyncConnector0(physics/rpea00)|KeepAlive",
+            "Name":"KeepAlive_Sent",
+            "Description":"connector DSG messages sent of type KeepAlive",
+            "UnitName":" messages
+            ","Value":163.0,
+            "StatType":"SyncConnectorStat",
+            "RegionName":"rpsa00",
+            "ConnectorNum":0,
+            "MyActorID":"persist",
+            "OtherSideActorID":"physics",
+            "OtherSideRegionName":"rpea00",
+            "MessageType":"KeepAlive"},
+        "DSG_Msgs_Typ_Sent|SyncConnector0(physics/rpea00)|RegionInfo": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Typ_Sent|SyncConnector0(physics/rpea00)|RegionInfo",
+            "Name":"RegionInfo_Sent",
+            "Description":"connector DSG messages sent of type RegionInfo",
+            "UnitName":" messages",
+            "Value":1.0,
+            "StatType":"SyncConnectorStat",
+            "RegionName":"rpsa00",
+            "ConnectorNum":0,
+            "MyActorID":"persist",
+            "OtherSideActorID":"physics",
+            "OtherSideRegionName":"rpea00",
+            "MessageType":"RegionInfo"},
+        "DSG_Msgs_Typ_Sent|SyncConnector0(physics/rpea00)|Terrain": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Msgs_Typ_Sent|SyncConnector0(physics/rpea00)|Terrain",
+            "Name":"Terrain_Sent",
+            "Description":"connector DSG messages sent of type Terrain",
+            "UnitName":" messages",
+            "Value":1.0,
+            "StatType":"SyncConnectorStat",
+            "RegionName":"rpsa00",
+            "ConnectorNum":0,
+            "MyActorID":"persist",
+            "OtherSideActorID":"physics",
+            "OtherSideRegionName":"rpea00",
+            "MessageType":"Terrain"},
+        "DSG_Queued_Msgs|SyncConnector0(physics/rpea00)": {
+            "Category":"dsg-detail",
+            "Container":"rpsa00.SyncConnector0",
+            "ShortName":"DSG_Queued_Msgs|SyncConnector0(physics/rpea00)",
+            "Name":"Queued_Msgs",
+            "Description":"connector DSG queued updates",
+            "UnitName":" messages",
+            "Value":0.0,
+            "StatType":"SyncConnectorStat",
+            "RegionName":"rpsa00",
+            "ConnectorNum":0,
+            "MyActorID":"persist",
+            "OtherSideActorID":"physics",
+            "OtherSideRegionName":"rpea00",
+            "MessageType":""}
+    },
+    "rpsa00.SyncConnector1": {
+        "DSG_Bytes_Rcvd|SyncConnector1(script/rsea100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Bytes_Rcvd|SyncConnector1(script/rsea100)","Name":"Bytes_Rcvd","Description":"connector DSG bytes rcvd","UnitName":" bytes","Value":0.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":""},"DSG_Bytes_Sent|SyncConnector1(script/rsea100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Bytes_Sent|SyncConnector1(script/rsea100)","Name":"Bytes_Sent","Description":"connector DSG bytes sent","UnitName":" bytes","Value":350995.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":""},"DSG_Msgs_Rcvd|SyncConnector1(script/rsea100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Rcvd|SyncConnector1(script/rsea100)","Name":"Msgs_Rcvd","Description":"connector DSG messages rcvd","UnitName":" messages","Value":167.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":""},"DSG_Msgs_Sent|SyncConnector1(script/rsea100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Sent|SyncConnector1(script/rsea100)","Name":"Msgs_Sent","Description":"connector DSG messages sent","UnitName":" messages","Value":165.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":""},"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|GetObjects":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|GetObjects","Name":"GetObjects_Rcvd","Description":"connector DSG messages of type GetObjects","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":"GetObjects"},"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|GetPresences":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|GetPresences","Name":"GetPresences_Rcvd","Description":"connector DSG messages of type GetPresences","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":"GetPresences"},"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|GetRegionInfo":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|GetRegionInfo","Name":"GetRegionInfo_Rcvd","Description":"connector DSG messages of type GetRegionInfo","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":"GetRegionInfo"},"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|GetTerrain":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|GetTerrain","Name":"GetTerrain_Rcvd","Description":"connector DSG messages of type GetTerrain","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":"GetTerrain"},"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|KeepAlive":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector1(script/rsea100)|KeepAlive","Name":"KeepAlive_Rcvd","Description":"connector DSG messages of type KeepAlive","UnitName":" messages","Value":163.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":"KeepAlive"},"DSG_Msgs_Typ_Sent|SyncConnector1(script/rsea100)|KeepAlive":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector1(script/rsea100)|KeepAlive","Name":"KeepAlive_Sent","Description":"connector DSG messages sent of type KeepAlive","UnitName":" messages","Value":163.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":"KeepAlive"},"DSG_Msgs_Typ_Sent|SyncConnector1(script/rsea100)|RegionInfo":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector1(script/rsea100)|RegionInfo","Name":"RegionInfo_Sent","Description":"connector DSG messages sent of type RegionInfo","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":"RegionInfo"},"DSG_Msgs_Typ_Sent|SyncConnector1(script/rsea100)|Terrain":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector1(script/rsea100)|Terrain","Name":"Terrain_Sent","Description":"connector DSG messages sent of type Terrain","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":"Terrain"},"DSG_Queued_Msgs|SyncConnector1(script/rsea100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector1","ShortName":"DSG_Queued_Msgs|SyncConnector1(script/rsea100)","Name":"Queued_Msgs","Description":"connector DSG queued updates","UnitName":" messages","Value":0.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":1,"MyActorID":"persist","OtherSideActorID":"script","OtherSideRegionName":"rsea100","MessageType":""}},
+
+    "rpsa00.SyncConnector2": {
+        "DSG_Bytes_Rcvd|SyncConnector2(clientmgr1/rcm100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Bytes_Rcvd|SyncConnector2(clientmgr1/rcm100)","Name":"Bytes_Rcvd","Description":"connector DSG bytes rcvd","UnitName":" bytes","Value":0.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":""},"DSG_Bytes_Sent|SyncConnector2(clientmgr1/rcm100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Bytes_Sent|SyncConnector2(clientmgr1/rcm100)","Name":"Bytes_Sent","Description":"connector DSG bytes sent","UnitName":" bytes","Value":350995.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":""},"DSG_Msgs_Rcvd|SyncConnector2(clientmgr1/rcm100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Rcvd|SyncConnector2(clientmgr1/rcm100)","Name":"Msgs_Rcvd","Description":"connector DSG messages rcvd","UnitName":" messages","Value":167.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":""},"DSG_Msgs_Sent|SyncConnector2(clientmgr1/rcm100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Sent|SyncConnector2(clientmgr1/rcm100)","Name":"Msgs_Sent","Description":"connector DSG messages sent","UnitName":" messages","Value":165.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":""},"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|GetObjects":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|GetObjects","Name":"GetObjects_Rcvd","Description":"connector DSG messages of type GetObjects","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":"GetObjects"},"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|GetPresences":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|GetPresences","Name":"GetPresences_Rcvd","Description":"connector DSG messages of type GetPresences","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":"GetPresences"},"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|GetRegionInfo":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|GetRegionInfo","Name":"GetRegionInfo_Rcvd","Description":"connector DSG messages of type GetRegionInfo","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":"GetRegionInfo"},"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|GetTerrain":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|GetTerrain","Name":"GetTerrain_Rcvd","Description":"connector DSG messages of type GetTerrain","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":"GetTerrain"},"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|KeepAlive":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector2(clientmgr1/rcm100)|KeepAlive","Name":"KeepAlive_Rcvd","Description":"connector DSG messages of type KeepAlive","UnitName":" messages","Value":163.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":"KeepAlive"},"DSG_Msgs_Typ_Sent|SyncConnector2(clientmgr1/rcm100)|KeepAlive":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector2(clientmgr1/rcm100)|KeepAlive","Name":"KeepAlive_Sent","Description":"connector DSG messages sent of type KeepAlive","UnitName":" messages","Value":163.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":"KeepAlive"},"DSG_Msgs_Typ_Sent|SyncConnector2(clientmgr1/rcm100)|RegionInfo":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector2(clientmgr1/rcm100)|RegionInfo","Name":"RegionInfo_Sent","Description":"connector DSG messages sent of type RegionInfo","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":"RegionInfo"},"DSG_Msgs_Typ_Sent|SyncConnector2(clientmgr1/rcm100)|Terrain":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector2(clientmgr1/rcm100)|Terrain","Name":"Terrain_Sent","Description":"connector DSG messages sent of type Terrain","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":"Terrain"},"DSG_Queued_Msgs|SyncConnector2(clientmgr1/rcm100)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector2","ShortName":"DSG_Queued_Msgs|SyncConnector2(clientmgr1/rcm100)","Name":"Queued_Msgs","Description":"connector DSG queued updates","UnitName":" messages","Value":0.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":2,"MyActorID":"persist","OtherSideActorID":"clientmgr1","OtherSideRegionName":"rcm100","MessageType":""}
+        },
+    "rpsa00.SyncConnector3": {
+        "DSG_Bytes_Rcvd|SyncConnector3(clientmgr2/rcm200)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Bytes_Rcvd|SyncConnector3(clientmgr2/rcm200)","Name":"Bytes_Rcvd","Description":"connector DSG bytes rcvd","UnitName":" bytes","Value":0.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":""},"DSG_Bytes_Sent|SyncConnector3(clientmgr2/rcm200)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Bytes_Sent|SyncConnector3(clientmgr2/rcm200)","Name":"Bytes_Sent","Description":"connector DSG bytes sent","UnitName":" bytes","Value":350995.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":""},"DSG_Msgs_Rcvd|SyncConnector3(clientmgr2/rcm200)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Rcvd|SyncConnector3(clientmgr2/rcm200)","Name":"Msgs_Rcvd","Description":"connector DSG messages rcvd","UnitName":" messages","Value":167.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":""},"DSG_Msgs_Sent|SyncConnector3(clientmgr2/rcm200)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Sent|SyncConnector3(clientmgr2/rcm200)","Name":"Msgs_Sent","Description":"connector DSG messages sent","UnitName":" messages","Value":165.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":""},"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|GetObjects":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|GetObjects","Name":"GetObjects_Rcvd","Description":"connector DSG messages of type GetObjects","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":"GetObjects"},"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|GetPresences":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|GetPresences","Name":"GetPresences_Rcvd","Description":"connector DSG messages of type GetPresences","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":"GetPresences"},"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|GetRegionInfo":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|GetRegionInfo","Name":"GetRegionInfo_Rcvd","Description":"connector DSG messages of type GetRegionInfo","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":"GetRegionInfo"},"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|GetTerrain":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|GetTerrain","Name":"GetTerrain_Rcvd","Description":"connector DSG messages of type GetTerrain","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":"GetTerrain"},"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|KeepAlive":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Typ_Rcvd|SyncConnector3(clientmgr2/rcm200)|KeepAlive","Name":"KeepAlive_Rcvd","Description":"connector DSG messages of type KeepAlive","UnitName":" messages","Value":163.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":"KeepAlive"},"DSG_Msgs_Typ_Sent|SyncConnector3(clientmgr2/rcm200)|KeepAlive":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector3(clientmgr2/rcm200)|KeepAlive","Name":"KeepAlive_Sent","Description":"connector DSG messages sent of type KeepAlive","UnitName":" messages","Value":163.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":"KeepAlive"},"DSG_Msgs_Typ_Sent|SyncConnector3(clientmgr2/rcm200)|RegionInfo":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector3(clientmgr2/rcm200)|RegionInfo","Name":"RegionInfo_Sent","Description":"connector DSG messages sent of type RegionInfo","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":"RegionInfo"},"DSG_Msgs_Typ_Sent|SyncConnector3(clientmgr2/rcm200)|Terrain":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Msgs_Typ_Sent|SyncConnector3(clientmgr2/rcm200)|Terrain","Name":"Terrain_Sent","Description":"connector DSG messages sent of type Terrain","UnitName":" messages","Value":1.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":"Terrain"},"DSG_Queued_Msgs|SyncConnector3(clientmgr2/rcm200)":
+            {"Category":"dsg-detail","Container":"rpsa00.SyncConnector3","ShortName":"DSG_Queued_Msgs|SyncConnector3(clientmgr2/rcm200)","Name":"Queued_Msgs","Description":"connector DSG queued updates","UnitName":" messages","Value":0.0,"StatType":"SyncConnectorStat","RegionName":"rpsa00","ConnectorNum":3,"MyActorID":"persist","OtherSideActorID":"clientmgr2","OtherSideRegionName":"rcm200","MessageType":""}
+        }
+},
+"entitytransfer": {
+    "rpsa00": {
+        "InterRegionTeleportAborts":
+            {"Category":"entitytransfer","Container":"rpsa00","ShortName":"InterRegionTeleportAborts","Name":"Number of inter-region teleports aborted due to client actions.","Description":"The chief action is simultaneous logout whilst teleporting.","UnitName":"","Value":0.0,"StatType":"Stat"},"InterRegionTeleportAttempts":
+            {"Category":"entitytransfer","Container":"rpsa00","ShortName":"InterRegionTeleportAttempts","Name":"Number of inter-region teleports attempted.","Description":"This does not count attempts which failed due to pre-conditions (e.g. target simulator refused access).\nYou can get successfully teleports by subtracting aborts, cancels and teleport failures from this figure.","UnitName":"","Value":0.0,"StatType":"Stat"},"InterRegionTeleportCancels":
+            {"Category":"entitytransfer","Container":"rpsa00","ShortName":"InterRegionTeleportCancels","Name":"Number of inter-region teleports cancelled by the client.","Description":"","UnitName":"","Value":0.0,"StatType":"Stat"},"InterRegionTeleportFailures":
+            {"Category":"entitytransfer","Container":"rpsa00","ShortName":"InterRegionTeleportFailures","Name":"Number of inter-region teleports that failed due to server/client/network issues.","Description":"This number may not be very helpful in open-grid/hg situations as the network connectivity/quality of destinations is uncontrollable.","UnitName":"","Value":0.0,"StatType":"Stat"}
+    }
+},
+"httpserver": {
+    "21000": {
+        "HTTPRequestsServed": {"Category":"httpserver","Container":"21000","ShortName":"HTTPRequestsServed","Name":"Number of inbound HTTP requests processed","Description":"","UnitName":"requests","Value":0.0,"StatType":"Stat"}
+    },
+    "7200": {
+        "HTTPRequestsServed": {"Category":"httpserver","Container":"7200","ShortName":"HTTPRequestsServed","Name":"Number of inbound HTTP requests processed","Description":"","UnitName":"requests","Value":69.0,"StatType":"Stat"}
+    }
+},
+"scene": {
+    "rpsa00": {
+        "ActivePrims": {"Category":"scene","Container":"rpsa00","ShortName":"ActivePrims","Name":"ActivePrims","Description":"ActivePrims","UnitName":"objects","Value":0.0,"StatType":"Stat"},
+        "ActiveScripts": {"Category":"scene","Container":"rpsa00","ShortName":"ActiveScripts","Name":"ActiveScripts","Description":"ActiveScripts","UnitName":"scripts","Value":0.0,"StatType":"Stat"},
+        "AgentTime": {"Category":"scene","Container":"rpsa00","ShortName":"AgentTime","Name":"AgentTime","Description":"AgentTime","UnitName":"ms/sec","Value":0.0,"StatType":"Stat"},
+        "AgentUpdates": {"Category":"scene","Container":"rpsa00","ShortName":"AgentUpdates","Name":"AgentUpdates","Description":"AgentUpdates","UnitName":"updates/sec","Value":0.0,"StatType":"Stat"},
+        "ChildAgents": {"Category":"scene","Container":"rpsa00","ShortName":"ChildAgents","Name":"ChildAgents","Description":"ChildAgents","UnitName":"avatars","Value":0.0,"StatType":"Stat"},
+        "FrameTime": {"Category":"scene","Container":"rpsa00","ShortName":"FrameTime","Name":"FrameTime","Description":"FrameTime","UnitName":"ms/sec","Value":18.1818199157715,"StatType":"Stat"},
+        "ImageTime": {"Category":"scene","Container":"rpsa00","ShortName":"ImageTime","Name":"ImageTime","Description":"ImageTime","UnitName":"ms/sec","Value":0.0,"StatType":"Stat"},
+        "NetTime": {"Category":"scene","Container":"rpsa00","ShortName":"NetTime","Name":"NetTime","Description":"NetTime","UnitName":"ms/sec","Value":0.0,"StatType":"Stat"},
+        "OtherTime": {"Category":"scene","Container":"rpsa00","ShortName":"OtherTime","Name":"OtherTime","Description":"OtherTime","UnitName":"ms/sec","Value":0.0,"StatType":"Stat"},
+        "PhysicsFPS": {"Category":"scene","Container":"rpsa00","ShortName":"PhysicsFPS","Name":"PhysicsFPS","Description":"PhysicsFPS","UnitName":"fps","Value":0.680000007152557,"StatType":"Stat"},
+        "PhysicsTime": {"Category":"scene","Container":"rpsa00","ShortName":"PhysicsTime","Name":"PhysicsTime","Description":"PhysicsTime","UnitName":"ms/sec","Value":0.0,"StatType":"Stat"},
+        "RealAgents": {"Category":"scene","Container":"rpsa00","ShortName":"RealAgents","Name":"RealAgents","Description":"RealAgents","UnitName":"avatars","Value":0.0,"StatType":"Stat"},
+        "RootAgents": {"Category":"scene","Container":"rpsa00","ShortName":"RootAgents","Name":"RootAgents","Description":"RootAgents","UnitName":"avatars","Value":0.0,"StatType":"Stat"},
+        "ScriptLines": {"Category":"scene","Container":"rpsa00","ShortName":"ScriptLines","Name":"ScriptLines","Description":"ScriptLines","UnitName":"lines/sec","Value":0.0,"StatType":"Stat"},
+        "SimFPS": {"Category":"scene","Container":"rpsa00","ShortName":"SimFPS","Name":"SimFPS","Description":"SimFPS","UnitName":"fps","Value":55.3333320617676,"StatType":"Stat"},
+        "SimSpareMS": {"Category":"scene","Container":"rpsa00","ShortName":"SimSpareMS","Name":"SimSpareMS","Description":"SimSpareMS","UnitName":"ms/sec","Value":18.1818199157715,"StatType":"Stat"},
+        "SlowFrames": {"Category":"scene","Container":"rpsa00","ShortName":"SlowFrames","Name":"Slow Frames","Description":"Number of frames where frame time has been significantly longer than the desired frame time.","UnitName":" frames","Value":0.0,"StatType":"Stat"},
+        "TimeDilation": {"Category":"scene","Container":"rpsa00","ShortName":"TimeDilation","Name":"TimeDilation","Description":"TimeDilation","UnitName":"sec/sec","Value":1.0,"StatType":"Stat"},
+        "TotalPrims": {"Category":"scene","Container":"rpsa00","ShortName":"TotalPrims","Name":"TotalPrims","Description":"TotalPrims","UnitName":"objects","Value":0.0,"StatType":"Stat"}
+    }
+},
+"server": {
+    "memory": {
+        "AverageHeapAllocationRate": {"Category":"server","Container":"memory","ShortName":"AverageHeapAllocationRate","Name":"AverageHeapAllocationRate","Description":"AverageHeapAllocationRate","UnitName":"MB/sec","Value":0.164,"StatType":"Stat"},
+        "HeapMemory": {"Category":"server","Container":"memory","ShortName":"HeapMemory","Name":"HeapMemory","Description":"HeapMemory","UnitName":"MB","Value":11.183,"StatType":"Stat"},
+        "LastHeapAllocationRate": {"Category":"server","Container":"memory","ShortName":"LastHeapAllocationRate","Name":"LastHeapAllocationRate","Description":"LastHeapAllocationRate","UnitName":"MB/sec","Value":0.016,"StatType":"Stat"},
+        "ProcessMemory": {"Category":"server","Container":"memory","ShortName":"ProcessMemory","Name":"ProcessMemory","Description":"ProcessMemory","UnitName":"MB","Value":197.562,"StatType":"Stat"}
+    },
+    "network": {
+        "BytesRcvd/Local Area Connection 2": {"Category":"server","Container":"network","ShortName":"BytesRcvd/Local Area Connection 2","Name":"BytesRcvd/Local Area Connection 2","Description":"Local Area Connection 2","UnitName":"KB","Value":2608206.186,"StatType":"Stat"},
+        "BytesSent/Local Area Connection 2": {"Category":"server","Container":"network","ShortName":"BytesSent/Local Area Connection 2","Name":"BytesSent/Local Area Connection 2","Description":"Local Area Connection 2","UnitName":"KB","Value":131866.384,"StatType":"Stat"},
+        "HTTPRequestsMade": {"Category":"server","Container":"network","ShortName":"HTTPRequestsMade","Name":"HTTPRequestsMade","Description":"Number of outbound HTTP requests made","UnitName":"requests","Value":4.0,"StatType":"Stat"},
+        "TotalBytes/Local Area Connection 2": {"Category":"server","Container":"network","ShortName":"TotalBytes/Local Area Connection 2","Name":"TotalBytes/Local Area Connection 2","Description":"Local Area Connection 2","UnitName":"KB","Value":2740072.569,"StatType":"Stat"}
+    },
+    "processor": {
+        "CPUPercent": {"Category":"server","Container":"processor","ShortName":"CPUPercent","Name":"CPUPercent","Description":"","UnitName":"percent","Value":2.96502804756165,"StatType":"Stat"},
+        "PrivilegedProcessorTime": {"Category":"server","Container":"processor","ShortName":"PrivilegedProcessorTime","Name":"PrivilegedProcessorTime","Description":"PrivilegedProcessorTime","UnitName":"sec","Value":11.856076,"StatType":"Stat"},
+        "Threads": {"Category":"server","Container":"processor","ShortName":"Threads","Name":"Threads","Description":"Threads","UnitName":"threads","Value":72.0,"StatType":"Stat"},
+        "TotalProcessorTime": {"Category":"server","Container":"processor","ShortName":"TotalProcessorTime","Name":"TotalProcessorTime","Description":"TotalProcessorTime","UnitName":"sec","Value":19.5157251,"StatType":"Stat"},
+        "UserProcessorTime": {"Category":"server","Container":"processor","ShortName":"UserProcessorTime","Name":"UserProcessorTime","Description":"UserProcessorTime","UnitName":"sec","Value":7.6596491,"StatType":"Stat"}
+    },
+    "threadpool": {
+        "BuiltinThreadpoolIOCPThreadsAvailable": {"Category":"server","Container":"threadpool","ShortName":"BuiltinThreadpoolIOCPThreadsAvailable","Name":"BuiltinThreadpoolIOCPThreadsAvailable","Description":"BuiltinThreadpoolIOCPThreadsAvailable","UnitName":"threads","Value":999.0,"StatType":"Stat"},
+        "BuiltinThreadpoolWorkerThreadsAvailable": {"Category":"server","Container":"threadpool","ShortName":"BuiltinThreadpoolWorkerThreadsAvailable","Name":"BuiltinThreadpoolWorkerThreadsAvailable","Description":"BuiltinThreadpoolWorkerThreadsAvailable","UnitName":"threads","Value":1000.0,"StatType":"Stat"}
+    }
+}
+}
+

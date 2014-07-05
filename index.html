@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<title>SimStats</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.sparkline.min.js"></script>
+<script type="text/javascript" src="SimStatsConfig.js"></script>
+<script type="text/javascript">
+
+var FALSE = 0;
+var TRUE = 1;
+
+// Note that gServers[] and g*PullInterval are defined in SimStatsConfig.js
+
+var gHistoDisplayInterval = 10;     // Seconds between display of activity histograms.
+
+// Page setup and control. Separate from all the drawing code
+$(document).ready(function() {
+
+    // Major divisions in the content accordioning
+    $('.Stats-statsContainer').show();
+    // clicking on a section header causes the section to open or close
+    $('.Stats-sectionHeader').click(function() {
+        $(this).next().slideToggle('slow');
+        return false;
+    });
+
+    $('#Stats-page-header').append(document.createTextNode(gGridName));
+
+    CreateSimTable();
+    // CreateConnTable();
+    CreateSceneTable();
+    CreateServerTable();
+
+    // FetchAndDisplayConnStats();
+    // setInterval(function() { FetchAndDisplayConnStats(); }, gConnPullInterval*1000);
+    FetchAndDisplaySceneStats();
+    setInterval(function() { FetchAndDisplaySceneStats(); }, gScenePullInterval*1000);
+    FetchAndDisplayServerStats();
+    setInterval(function() { FetchAndDisplayServerStats(); }, gServerPullInterval*1000);
+
+    setInterval(function() { DisplayHistograms(); }, gHistoDisplayInterval*1000);
+});
+
+function FetchAndDisplayConnStats() {
+    for (var simName in gServers) {
+        FetchAndDisplayOneConnStats(simName);
+    }
+}
+function FetchAndDisplayOneConnStats(simName) {
+    var simURL = gServers[simName];
+    $.getJSON(simURL + "/This/That/?cat=dsg-detail", function(data) {
+        CollectConnectorData(simName, data);
+        DisplayConnectorData(simName, data);
+    });
+}
+
+function FetchAndDisplaySceneStats() {
+    for (var simName in gServers) {
+        FetchAndDisplayOneSceneStats(simName);
+    }
+}
+function FetchAndDisplayOneSceneStats(simName) {
+    var simURL = gServers[simName];
+    $.getJSON(simURL + "/This/That/?cat=scene", function(data) {
+        DisplaySceneData(simName, data);
+    });
+}
+
+function FetchAndDisplayServerStats() {
+    for (var simName in gServers) {
+        FetchAndDisplayOneServerStats(simName);
+    }
+    // FetchAndDisplayOneServerStats(gPersistName);
+}
+function FetchAndDisplayOneServerStats(simName) {
+    var simURL = gServers[simName];
+    $.getJSON(simURL + "/This/That/?cat=server", function(data) {
+        DisplayServerData(simName, data);
+    });
+}
+
+// ================================================================
+// ================================================================
+// Create table of the servers so the viewer knows what they are looking at.
+function CreateSimTable() {
+    if ($('#Stats-sim-stats').is(':hidden')) return;
+
+    var tbl = document.createElement("table");
+    tbl.setAttribute('class', 'Stats-sim-table');
+    for (var simName in gServers) {
+        var tr = document.createElement("tr");
+
+        var td = document.createElement("td");
+        td.appendChild(document.createTextNode(simName));
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.appendChild(document.createTextNode(gServers[simName]));
+        tr.appendChild(td);
+
+        tbl.appendChild(tr);
+    }
+    $('#Stats-sim-stats').empty().append(tbl);
+}
+
+// ================================================================
+// ================================================================
+var gSceneTableColumns = [
+                        "Region", 
+                        "ActivePrims",
+                        "ActiveScripts",
+                        "AgentTime",
+                        "AgentUpdates",
+                        "ChildAgents",
+                        "FrameTime",
+                        "ImageTime",
+                        "NetTime",
+                        "OtherTime",
+                        "PhysicsFPS",
+                        "PhysicsTime",
+                        "RootAgents",
+                        "ScriptLines",
+                        "SimFPS",
+                        "SimSpareMS",
+                        "SlowFrames",
+                        "TimeDilation",
+                        "TotalPrims" ];
+
+// Create a table with all the server stats in rows and id'ed rows for the
+//    individual simulators. 
+function CreateSceneTable() {
+    var tbl = document.createElement("table");
+    tbl.setAttribute('class', 'Stats-server-table');
+
+    var headerRow = document.createElement("tr");
+    for (var colIndex in gSceneTableColumns) {
+        var th = document.createElement("th");
+        th.appendChild(document.createTextNode(gSceneTableColumns[colIndex]));
+        headerRow.appendChild(th);
+    }
+    tbl.appendChild(headerRow);
+
+    // Insert a <tbody> for each simulator. As the data comes in from the sims, they
+    //    will create one or more rows of data to fill the <tbody>.
+    for (var simName in gServers) {
+        var simTableDiv = document.createElement("tbody");
+        simTableDiv.setAttribute('id', 'Stats-server-tablerow-' + simName);
+        tbl.appendChild(simTableDiv);
+    }
+    $('#Stats-scene-stats').empty().append(tbl);
+}
+
+// Create a row of scene data and plug it into the larger table
+function DisplaySceneData(simName, data) {
+    var tableid = '#Stats-server-tablerow-' + simName;
+    if ($(tableid).is(':hidden')) return;   // don't display if you can't see it
+
+    $(tableid).empty();
+
+    var simScenes = data["scene"];
+    for (var sceneName in simScenes) {
+        var row = document.createElement("tr");
+
+        // First element is the scene/region name
+        var td = document.createElement("td");
+        td.appendChild(document.createTextNode(sceneName));
+        row.appendChild(td);
+
+        // for (var colIndex in gSceneTableColumns) {
+        for (var ii = 1; ii < gSceneTableColumns.length; ii++) {
+            var colName = gSceneTableColumns[ii];
+            var td = document.createElement("td");
+            var val = simScenes[sceneName][colName]["Value"];
+            val = Math.round(val * 100) / 100;
+            td.appendChild(document.createTextNode(val));
+            row.appendChild(td);
+        }
+
+        $(tableid).append(row);
+    }
+}
+
+// ================================================================
+// ================================================================
+function CreateServerTable() {
+}
+
+function DisplayServerData(simName, data) {
+    if ($('#Stats-server-stats').is(':hidden')) return;
+
+    var tbl = document.createElement("table");
+    tbl.setAttribute('class', 'Stats-server-table');
+    AddStatRows('server', 'memory', data, tbl);
+    AddStatRows('server', 'processor', data, tbl);
+    AddStatRows('server', 'network', data, tbl);
+    AddStatRows('server', 'threadpool', data, tbl);
+    $('#Stats-server-stats').empty().append(tbl);
+}
+
+// Given a table and a datastructure, add rows for the maps of stats found therein.
+// The first parameters are the index down into the datastructure. This expects
+//    to find a map of name/stats at that level and will create one table line per stat.
+function AddStatRows(cap, cont, data, tbl) {
+    var stats = data[cap][cont];
+    var firstTime = TRUE;
+    for (var statName in stats) {
+        var statMap = stats[statName];
+        var row = document.createElement("tr");
+
+        var td1 = document.createElement("td");
+        if (firstTime) 
+            td1.appendChild(document.createTextNode(cont));
+        row.appendChild(td1);
+
+        var td2 = document.createElement("td");
+        td2.appendChild(document.createTextNode(statName));
+        row.appendChild(td2);
+
+        var td3 = document.createElement("td");
+        var val = statMap['Value'];
+        val = Math.round(val * 100) / 100;
+        td3.appendChild(document.createTextNode(val));
+        row.appendChild(td3);
+
+        tbl.appendChild(row);
+        firstTime = FALSE;
+    }
+}
+
+// ================================================================
+// ================================================================
+var gConnTableColumns = [
+                    "MyActorID", 
+                    "Connector", 
+                    "OtherSideActor",
+                    "Bytes_Rcvd",
+                    "Bytes_Sent",
+                    "Msgs_Rcvd",
+                    "Msgs_Sent",
+                    "UpdatedProperties_Rcvd",
+                    "UpdatedProperties_Sent",
+                    "NewPresence_Rcvd",
+                    "NewPresence_Sent",
+                    "NewObject_Rcvd",
+                    "NewObject_Sent",
+                    "KeepAlive_Rcvd",
+                    "KeepAlive_Sent"
+];
+
+// Create a table with all the server stats in rows and id'ed rows for the
+//    individual simulators. 
+function CreateConnTable() {
+    var tbl = document.createElement("table");
+    tbl.setAttribute('class', 'Stats-conn-table');
+
+    var headerRow = document.createElement("tr");
+    for (var ii=0; ii<gConnTableColumns.length; ii++) {
+        var th = document.createElement("th");
+        th.appendChild(document.createTextNode(gConnTableColumns[ii]));
+        headerRow.appendChild(th);
+    }
+    tbl.appendChild(headerRow);
+
+    // Create a <tbody> section for each of the simulators.
+    // The display code will populate these sections with the rows of data.
+    for (var simName in gServers) {
+        var simTableDiv = document.createElement("tbody");
+        simTableDiv.setAttribute('id', 'Stats-conn-tablerow-' + simName);
+        tbl.appendChild(simTableDiv);
+
+        // Add an empty row after each simulator to act as a separator
+        var blankrow = document.createElement('tr');
+        blankrow.setAttribute("class", "Stats-conn-table-blankrow");
+        var blankdata = document.createElement('td');
+        blankdata.appendChild(document.createTextNode(''));
+        blankrow.appendChild(blankdata);
+        tbl.appendChild(blankrow);
+    }
+    $('#Stats-conn-stats').empty().append(tbl);
+}
+
+// Given data for an simulator, populate the display page with tables, etc.
+function DisplayConnectorData(simName, data) {
+    var tableid = '#Stats-conn-tablerow-' + simName;
+    if ($(tableid).is(':hidden')) return;
+
+    $(tableid).empty();
+
+    for (var syncConnName in data['dsg-detail']) {
+        var connInfo = data['dsg-detail'][syncConnName];
+        var connStats = {};
+        var firstTime = TRUE;
+
+        for (var connStatName in connInfo) {
+            var connStat = connInfo[connStatName];
+            if (firstTime) {
+                connStats['MyActorID'] = connStat['MyActorID'];
+                connStats['Connector'] = connStat['Container'];
+                connStats['OtherSideActor'] = connStat['OtherSideActorID'];
+                firstTime = FALSE;
+            }
+            connStats[connStat['Name']] = connStat['Value'];
+        }
+
+        var row = document.createElement("tr");
+
+        for (var ii=0; ii<gConnTableColumns.length; ii++) {
+            var td = document.createElement("td");
+            if (typeof connStats[gConnTableColumns[ii]] != 'undefined') {
+                td.appendChild(document.createTextNode(connStats[gConnTableColumns[ii]]));
+            }
+            row.appendChild(td);
+        }
+        $(tableid).append(row);
+    }
+}
+
+// Passed data for an simulator, extract data for histograms, etc
+// The data is value = data["dsg-detail"][connectorName][statisticName][statisticDetail]
+function CollectConnectorData(simName, data) {
+    CollectForMsgsHistograms(simName, data);
+}
+
+var gHistoMsgsRcvdLastTime = {};
+var gHistoMsgsSentLastTime = {};
+var gHistoMsgsRcvd = {};
+var gHistoMsgsSent = {};
+var gHistoMsgsSamples = 40
+
+// Construct histograms of number of messages sent and received.
+// Creates and updates several structures:
+//          gHistoMsgsRcvdLastTime[simName]{connectorName] => msgs rcvd from last sample
+//          gHistoMsgsSentLastTime[simName]{connectorName] => msgs sent from last sample
+//          gHistoMsgsRcvd[simName]{connectorName] => array of last N msgs received per sample
+//          gHistoMsgsSent[simName]{connectorName] => array of last N msgs sent per sample
+function CollectForMsgsHistograms(simName, data) {
+    for (var connName in data["dsg-detail"]) {
+        var connInfo = data['dsg-detail'][connName];
+        for (var connDetail in connInfo) {
+            var combIndex = simName + "-" + connName;
+            if (connInfo[connDetail]['Name'] == "Msgs_Rcvd") {
+                var thisMsgsRcvd = connInfo[connDetail]['Value'];
+
+                // Make sure the arrays are built out
+                if (typeof gHistoMsgsRcvdLastTime[combIndex] == 'undefined') gHistoMsgsRcvdLastTime[combIndex] = thisMsgsRcvd;
+                if (typeof gHistoMsgsRcvd[simName] == 'undefined') gHistoMsgsRcvd[simName] = {};
+                if (typeof gHistoMsgsRcvd[simName][connName] == 'undefined') gHistoMsgsRcvd[simName][connName] = [];
+
+                var lastMsgsRcvd = gHistoMsgsRcvdLastTime[combIndex];
+                var changedMsgsRcvd = thisMsgsRcvd - lastMsgsRcvd;
+                gHistoMsgsRcvdLastTime[combIndex] = thisMsgsRcvd;
+                // Note that arrays are objects and are thus passed by reference
+                AddToHistoArray(gHistoMsgsRcvd[simName][connName], changedMsgsRcvd, gHistoMsgsSamples);
+
+            }
+            if (connInfo[connDetail]['Name'] == "Msgs_Sent") {
+                var thisMsgsSent = connInfo[connDetail]['Value'];
+
+                // Make sure the arrays are built out
+                if (typeof gHistoMsgsSentLastTime[combIndex] == 'undefined') gHistoMsgsSentLastTime[combIndex] = thisMsgsSent;
+                if (typeof gHistoMsgsSent[simName] == 'undefined') gHistoMsgsSent[simName] = {};
+                if (typeof gHistoMsgsSent[simName][connName] == 'undefined') gHistoMsgsSent[simName][connName] = [];
+
+                var lastMsgsSent = gHistoMsgsSentLastTime[combIndex];
+                var changedMsgsSent = thisMsgsSent - lastMsgsSent;
+                gHistoMsgsSentLastTime[combIndex] = thisMsgsSent;
+                AddToHistoArray(gHistoMsgsSent[simName][connName], changedMsgsSent, gHistoMsgsSamples);
+            }
+        }
+    }
+}
+
+// Given an array of items, add 'dataPoint' to the end and then limit the array to
+//     'maxHisto' entries.
+function AddToHistoArray(histo, dataPoint, maxHisto) {
+    histo.push(dataPoint);
+    if (histo.length > maxHisto) {
+        histo.splice(0, 1);
+    }
+}
+
+function DisplayHistograms() {
+    if ($('#Stats-histo').is(':hidden')) return;
+
+    var tbl = document.createElement("table");
+    tbl.setAttribute('class', 'Stats-histo-table');
+
+    var row = document.createElement('tr');
+    var th = document.createElement('th');
+    th.appendChild(document.createTextNode("Connector"));
+    row.appendChild(th);
+    th = document.createElement('th');
+    th.appendChild(document.createTextNode("Msgs Sent"));
+    th.setAttribute('class', "column-spark-sentrcvd");
+    row.appendChild(th);
+    th = document.createElement('th');
+    th.appendChild(document.createTextNode("Msgs Rcvd"));
+    th.setAttribute('class', "column-spark-sentrcvd");
+    row.appendChild(th);
+    tbl.appendChild(row);
+
+    // Build the table with the spans for the histograms
+    for (var simName in gHistoMsgsRcvd) {
+        for (var connName in gHistoMsgsRcvd[simName]) {
+            var row = document.createElement('tr');
+
+            var td = document.createElement('td');
+            td.appendChild(document.createTextNode(connName));
+            row.appendChild(td);
+
+            td = document.createElement('td');
+            td.setAttribute('class', "column-spark-sentrcvd");
+            span = document.createElement('span');
+            sparkID = 'Stats-spark-sent-' + simName + "-" + connName.replace('.', '-');
+            span.setAttribute('id', sparkID);
+            td.appendChild(span);
+            row.appendChild(td);
+
+            td = document.createElement('td');
+            td.setAttribute('class', "column-spark-sentrcvd");
+            var span = document.createElement('span');
+            var sparkID = 'Stats-spark-rcvd-' + simName + "-" + connName.replace('.', '-');
+            span.setAttribute('id', sparkID);
+            td.appendChild(span);
+            row.appendChild(td);
+
+            tbl.appendChild(row);
+        }
+    }
+    $('#Stats-histo').empty().append(tbl);
+
+    // Add all the histogram data to the built table.
+    for (var simName in gHistoMsgsRcvd) {
+        for (var connName in gHistoMsgsRcvd[simName]) {
+            var sparkID = '#Stats-spark-rcvd-' + simName + "-" + connName.replace('.', '-');
+            // DebugLog("spark: sim=" + simName + ",conn=" + connName + ",type=" + typeof gHistoMsgsRcvd[simName][connName] + ",len=" + gHistoMsgsRcvd[simName][connName])
+            var arrToStr = ArrayToString(gHistoMsgsRcvd[simName][connName]);
+            // DebugLog("spark: rcvd " + simName + "/" + connName + "id=" + sparkID + ",array= " + arrToStr);
+            $(sparkID).sparkline(gHistoMsgsRcvd[simName][connName]);
+            // $(sparkID).append(document.createTextNode(arrToStr));
+            sparkID = '#Stats-spark-sent-' + simName + "-" + connName.replace('.', '-');
+            $(sparkID).sparkline(gHistoMsgsSent[simName][connName]);
+            // $(sparkID).append(document.createTextNode(ArrayToString(gHistoMsgsSent[simName][connName])));
+        }
+    }
+}
+
+function ArrayToString (inArray) {
+    var outString = "";
+    for (var ii= 0; ii<inArray.length; ii++) {
+        outString += " " + inArray[ii];
+    }
+    return outString;
+}
+// ================================================================
+// ================================================================
+function DebugLog(msg) {
+	$('#DEBUG').append('<div>' + msg + '</div>');
+	$('#DEBUG').show();
+};
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="SimStats.css"/>
+
+</head>
+<body>
+<h1 id="Stats-page-header"></h1>
+
+<div id="Stats-content">
+
+<div class="Stats-sectionContainer" id="Stats-sceneContainer">
+<a class="Stats-sectionHeader" href="#">Scene Statistics</a>
+<div class="Stats-scene-div" id="Stats-scene-stats"></div>
+</div>	<!-- Stats-sectionContainer Stats-sceneContainer -->
+
+<div class="Stats-sectionContainer" id="Stats-serverContainer">
+<a class="Stats-sectionHeader" href="#">Server Statistics</a>
+<div class="Stats-server-div" id="Stats-server-stats"></div>
+</div>	<!-- Stats-sectionContainer Stats-serverContainer -->
+
+<div class="Stats-sectionContainer" id="Stats-simContainer">
+<a class="Stats-sectionHeader" href="#">Simulators</a>
+<div class="Stats-sim-div" id="Stats-sim-stats"></div>
+</div>	<!-- Stats-sectionContainer Stats-simContainer -->
+
+<!--
+<form>
+    <label>Server: <input type="text" name="Server URL" id="Stats-form-server"/> </label>
+    <input name="Select" type="button" value="Change server" onclick="SelectServer();"/>
+</form>
+-->
+
+</div>	<!-- Stats-content -->
+<div id="DEBUG"></div>
+</body>
+</html>

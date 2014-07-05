@@ -1,0 +1,50 @@
+body {
+	background: #a0a0b0;
+	padding: 10px;
+	font-family: sans-serif;
+}
+
+.Stats-sectionHeader {
+    font-weight: bold;
+}
+
+.Stats-sectionContainer {
+    background: #c0c0c8;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.Stats-conn-table, .Stats-scene-table, .Stats-server-table, .Stats-sim-table, .Stats-histo-table {
+    border-collapse: collapse;
+    font-size: 9px;
+    background: #ffffff;
+}
+
+.Stats-conn-table th, .Stats-scene-table th, .Stats-server-table th, .Stats-sim-table th, .Stats-histo-table th {
+    border: 1px solid black;
+    font-weight: bold;
+    background-color: #d0d0d0;
+}
+
+.Stats-conn-table td, .Stats-scene-table td, .Stats-server-table td, .Stats-sim-table td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.Stats-scene-table td {
+    font-size: small;
+}
+
+.Stats-histo-table th.column-spark-sentrcvd {
+    width: 50px;
+}
+
+.Stats-conn-table-blankrow {
+    background-color: #d0d0d0;
+}
+
+#DEBUG {
+	font-size: 9px;
+	background: #f0f0f0;
+}
+
