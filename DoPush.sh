@@ -3,7 +3,7 @@
 
 ACCT="secondlifepdx"
 SITE="dvorak.dreamhost.com"
-DIR="SimStats"
+DIR="virtualportland.org/SimStats"
 
 DST="${ACCT}@${SITE}:${DIR}/"
 

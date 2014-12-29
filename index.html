@@ -5,10 +5,10 @@
 <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="jquery.sparkline.min.js"></script>
 
-<!-- <script type="text/javascript" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"</script> -->
-<script type="text/javascript" src="jquery.dataTables.1.10.0.js"</script>
+<!-- <script type="text/javascript" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script> -->
+<script type="text/javascript" src="jquery.dataTables.1.10.0.js"></script>
 <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css"/> -->
-<script type="text/javascript" src="jquery.dataTables.1.10.0.css"</script>
+<script type="text/javascript" src="jquery.dataTables.1.10.0.css"></script>
 
 <script type="text/javascript" src="SimStatsConfig.js"></script>
 <script type="text/javascript">
@@ -55,7 +55,7 @@ function FetchAndDisplayConnStats() {
 }
 function FetchAndDisplayOneConnStats(simName) {
     var simURL = gServers[simName];
-    $.getJSON(simURL + "/This/That/?cat=dsg-detail", function(data) {
+    $.getJSON(simURL + "?cat=dsg-detail", function(data) {
         CollectConnectorData(simName, data);
         DisplayConnectorData(simName, data);
     });
@@ -68,7 +68,7 @@ function FetchAndDisplaySceneStats() {
 }
 function FetchAndDisplayOneSceneStats(simName) {
     var simURL = gServers[simName];
-    $.getJSON(simURL + "/This/That/?cat=scene", function(data) {
+    $.getJSON(simURL + "?cat=scene", function(data) {
         DisplaySceneData(simName, data);
     });
 }
@@ -81,7 +81,7 @@ function FetchAndDisplayServerStats() {
 }
 function FetchAndDisplayOneServerStats(simName) {
     var simURL = gServers[simName];
-    $.getJSON(simURL + "/This/That/?cat=server", function(data) {
+    $.getJSON(simURL + "?cat=server", function(data) {
         DisplayServerData(simName, data);
     });
 }

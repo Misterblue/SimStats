@@ -2,7 +2,7 @@
 var gGridName = "Roberts Grid";
 
 var gServers = {};
-gServers["BulletSim"]       = "http://blueland.virtualportland.org:14499";
+gServers["BulletSim"]       = "http://pc.virtualportland.org:14559/This/That/";
 
 // Seconds between data fetches.
 var gConnPullInterval = 10;     // status poll time in seconds
